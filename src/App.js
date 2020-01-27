@@ -9,11 +9,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      nameValue: ''
+      nameValue: '',
+      cityValue: ''
     };
   }
-  handleChange = evt => {
+  handleChangeName = evt => {
     this.setState({ nameValue: evt.target.value });
+  };
+
+  handleChangeCity = evt => {
+    this.setState({ cityValue: evt.target.value });
   };
 
   render() {
@@ -34,7 +39,7 @@ class App extends Component {
                 <input
                   placeholder="search"
                   type="text"
-                  onChange={this.handleChange}
+                  onChange={this.handleChangeName}
                   value={this.state.nameValue}
                 />
 
@@ -48,7 +53,11 @@ class App extends Component {
             <div>
               <h2 className="searchbar">city/town</h2>
               <form>
-                <input placeholder="search" type="text" />
+                <input
+                  onChange={this.handleChangeCity}
+                  placeholder="search"
+                  type="text"
+                />
                 <Link to="/citysearch">
                   <button type="submit">
                     <img src="./images/beer.svg" alt="" />
@@ -59,6 +68,7 @@ class App extends Component {
             <Link to="/">
               <h2 className="searchbar">about</h2>
             </Link>
+            <img className="keg" src="./images/keg.svg" alt="keg"></img>
           </nav>
           <main>
             <Switch>
@@ -71,7 +81,10 @@ class App extends Component {
               />
             </Switch>
             <Switch>
-              <Route path={'/citysearch'} component={CitySearch} />
+              <Route
+                path={'/citysearch'}
+                render={() => <CitySearch cityValue={this.state.cityValue} />}
+              />
             </Switch>
           </main>
         </div>
