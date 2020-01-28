@@ -119,6 +119,11 @@ form {
   color: black;
 }
 
+.about {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
 @media (max-width: 600px) {
   .page {
     display: block;
@@ -128,5 +133,9 @@ form {
   }
   .website {
     font-size: 12px;
+  }
+  .about {
+    margin-left: 10px;
+    margin-bottom: 10px;
   }
 }

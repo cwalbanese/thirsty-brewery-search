@@ -10,15 +10,16 @@ class About extends Component {
           src="./images/bartender.jpg"
           alt="bartender"
         ></img>
-        <p>
+        <p className="about">
           <span className="thirsty">thirsty</span> is an application designed to
           assist you when, well, you're
-          <span className="thirsty"> thirsty</span>. it is a way to search for
-          local breweries, cideries, brewpubs, and bottleshops. instead of
-          scouring google trying to figure out what's a brewery and what's a
-          bar, use the <span className="thirsty"> thirsty</span> app to filter
-          your search to just breweries and alike! how cool is that? happy
-          drinking and be safe.
+          <span className="thirsty"> thirsty</span>, for a craft beverage. it is
+          a way to search for local breweries, cideries, brewpubs, and
+          bottleshops. instead of scouring google trying to figure out what's a
+          brewery and what's a bar, use the{' '}
+          <span className="thirsty"> thirsty</span> app to filter your search to
+          just breweries and alike! how cool is that? happy drinking and be
+          safe.
         </p>
       </div>
     );
