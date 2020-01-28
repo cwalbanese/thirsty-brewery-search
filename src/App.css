@@ -114,3 +114,19 @@ form {
 .thirsty {
   font-weight: 700;
 }
+
+.website {
+  color: black;
+}
+
+@media (max-width: 600px) {
+  .page {
+    display: block;
+  }
+  .container {
+    display: block;
+  }
+  .website {
+    font-size: 12px;
+  }
+}

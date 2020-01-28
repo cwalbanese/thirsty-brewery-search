@@ -29,6 +29,7 @@ class CitySearch extends Component {
           <div className="smallContainer" key={result.id}>
             <h1>{result.name}</h1>
             <a
+              className="website"
               href={result.website_url}
               target="_blank"
               rel="noopener noreferrer"
