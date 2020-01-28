@@ -19,7 +19,11 @@ class NameSearch extends Component {
     fetch(url)
       .then(response => response.json())
       .then(response => {
-        this.setState({ data: response });
+        if (this.props.nameValue === '') {
+          return;
+        } else {
+          this.setState({ data: response });
+        }
       });
   }
 
