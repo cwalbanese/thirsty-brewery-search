@@ -35,7 +35,7 @@ class App extends Component {
             <h2 className="searchBy">search by:</h2>
             <div>
               <h2 className="searchbar">name/keyword</h2>
-              <form>
+              <form className="nav-form">
                 <input
                   placeholder="search"
                   type="text"
@@ -52,7 +52,7 @@ class App extends Component {
             </div>
             <div>
               <h2 className="searchbar">city/town</h2>
-              <form>
+              <form className="nav-form">
                 <input
                   onChange={this.handleChangeCity}
                   placeholder="search"

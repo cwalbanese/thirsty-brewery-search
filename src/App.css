@@ -138,4 +138,10 @@ form {
     margin-left: 10px;
     margin-bottom: 10px;
   }
+
+  nav,
+  .nav-form {
+    display: block;
+    text-align: center;
+  }
 }
