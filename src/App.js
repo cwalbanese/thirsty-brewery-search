@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link, Switch, Route, withRouter } from 'react-router-dom';
 import About from './About';
 import Results from './Results';
-import './App.css';
 import Nav from './Nav';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
