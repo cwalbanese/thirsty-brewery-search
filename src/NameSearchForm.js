@@ -17,7 +17,6 @@ class NameSearchForm extends Component {
                 type="text"
                 name="nameValue"
               />
-
               <button
                 name="name"
                 type="submit"

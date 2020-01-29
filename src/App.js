@@ -29,21 +29,13 @@ class App extends Component {
       fetch(nameurl)
         .then(response => response.json())
         .then(response => {
-          if (this.props.nameValue === '') {
-            return;
-          } else {
-            this.setState({ data: response });
-          }
+          this.setState({ data: response });
         });
     } else {
       fetch(cityurl)
         .then(response => response.json())
         .then(response => {
-          if (this.props.cityValue === '') {
-            return;
-          } else {
-            this.setState({ data: response });
-          }
+          this.setState({ data: response });
         });
     }
   };
