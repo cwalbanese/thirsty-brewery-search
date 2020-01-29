@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Switch, Route } from 'react-router-dom';
+import { Link, Switch, Route, withRouter } from 'react-router-dom';
 import About from './About';
 import Results from './Results';
 import './App.css';
@@ -31,14 +31,16 @@ class App extends Component {
         .then(response => {
           this.setState({ data: response });
           this.clearSearch();
-        });
+        })
+        .then(() => this.props.history.push('/search'));
     } else {
       fetch(cityurl)
         .then(response => response.json())
         .then(response => {
           this.setState({ data: response });
           this.clearSearch();
-        });
+        })
+        .then(() => this.props.history.push('/search'));
     }
   };
 
@@ -84,4 +86,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

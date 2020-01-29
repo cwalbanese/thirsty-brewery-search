@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Link } from 'react-router-dom';
 
 class CitySearchForm extends Component {
   render() {
@@ -18,9 +17,7 @@ class CitySearchForm extends Component {
             />
 
             <button name="city" type="submit" onClick={this.props.handleSubmit}>
-              <Link to="/search">
-                <img name="city" src="./images/beer.svg" alt="" />
-              </Link>
+              <img name="city" src="./images/beer.svg" alt="" />
             </button>
           </form>
         </div>
