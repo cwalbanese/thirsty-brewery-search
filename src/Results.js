@@ -1,35 +1,11 @@
 import React, { Component } from 'react';
+import './App.css';
 
-class CitySearch extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: []
-    };
-  }
-
-  componentDidMount() {
-    this.componentWillReceiveProps();
-  }
-
-  componentWillReceiveProps() {
-    const url = `https://api.openbrewerydb.org/breweries?by_city=${this.props.cityValue}`;
-
-    fetch(url)
-      .then(response => response.json())
-      .then(response => {
-        if (this.props.cityValue === '') {
-          return;
-        } else {
-          this.setState({ data: response });
-        }
-      });
-  }
-
+class Results extends Component {
   render() {
     return (
       <div className="container">
-        {this.state.data.map(result => (
+        {this.props.data.map(result => (
           <div className="smallContainer" key={result.id}>
             <h1>{result.name}</h1>
             <a
@@ -56,4 +32,4 @@ class CitySearch extends Component {
   }
 }
 
-export default CitySearch;
+export default Results;

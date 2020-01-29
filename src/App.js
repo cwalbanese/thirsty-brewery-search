@@ -1,20 +1,51 @@
 import React, { Component } from 'react';
 import { Link, Switch, Route } from 'react-router-dom';
 import About from './About';
-import NameSearch from './NameSearch';
-import CitySearch from './CitySearch';
+import Results from './Results';
 import './App.css';
+import Nav from './Nav';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       nameValue: '',
-      cityValue: ''
+      cityValue: '',
+      data: []
     };
   }
+
   handleChange = evt => {
     this.setState({ [evt.target.name]: evt.target.value });
+  };
+
+  handleSubmit = evt => {
+    evt.preventDefault();
+    const nameurl = `https://api.openbrewerydb.org/breweries?by_name=${this.state.nameValue}`;
+
+    const cityurl = `https://api.openbrewerydb.org/breweries?by_city=${this.state.cityValue}`;
+
+    if (evt.target.name === 'name') {
+      fetch(nameurl)
+        .then(response => response.json())
+        .then(response => {
+          if (this.props.nameValue === '') {
+            return;
+          } else {
+            this.setState({ data: response });
+          }
+        });
+    } else {
+      fetch(cityurl)
+        .then(response => response.json())
+        .then(response => {
+          if (this.props.cityValue === '') {
+            return;
+          } else {
+            this.setState({ data: response });
+          }
+        });
+    }
   };
 
   render() {
@@ -28,41 +59,10 @@ class App extends Component {
         </header>
         <div className="page">
           <nav>
-            <h2 className="searchBy">search by:</h2>
-            <div>
-              <h2 className="searchbar">name/keyword</h2>
-              <form className="nav-form">
-                <input
-                  placeholder="search"
-                  type="text"
-                  onChange={this.handleChange}
-                  value={this.state.nameValue}
-                  name="nameValue"
-                />
-
-                <Link to="/namesearch">
-                  <button type="submit">
-                    <img src="./images/beer.svg" alt="" />
-                  </button>
-                </Link>
-              </form>
-            </div>
-            <div>
-              <h2 className="searchbar">city/town</h2>
-              <form className="nav-form">
-                <input
-                  onChange={this.handleChange}
-                  placeholder="search"
-                  type="text"
-                  name="cityValue"
-                />
-                <Link to="/citysearch">
-                  <button type="submit">
-                    <img src="./images/beer.svg" alt="" />
-                  </button>
-                </Link>
-              </form>
-            </div>
+            <Nav
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+            />
             <Link to="/">
               <h2 className="searchbar">about</h2>
             </Link>
@@ -73,13 +73,8 @@ class App extends Component {
               <Route path={'/'} exact component={About} />
 
               <Route
-                path={'/namesearch'}
-                render={() => <NameSearch nameValue={this.state.nameValue} />}
-              />
-
-              <Route
-                path={'/citysearch'}
-                render={() => <CitySearch cityValue={this.state.cityValue} />}
+                path={'/search'}
+                render={() => <Results data={this.state.data} />}
               />
             </Switch>
           </main>
