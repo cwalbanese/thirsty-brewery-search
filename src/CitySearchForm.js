@@ -14,6 +14,7 @@ class CitySearchForm extends Component {
               placeholder="search"
               type="text"
               name="cityValue"
+              value={this.props.cityValue}
             />
 
             <button name="city" type="submit" onClick={this.props.handleSubmit}>

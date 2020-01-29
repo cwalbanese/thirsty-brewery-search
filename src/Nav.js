@@ -10,10 +10,12 @@ class Nav extends Component {
         <NameSearchForm
           handleChange={this.props.handleChange}
           handleSubmit={this.props.handleSubmit}
+          nameValue={this.props.nameValue}
         />
         <CitySearchForm
           handleChange={this.props.handleChange}
           handleSubmit={this.props.handleSubmit}
+          cityValue={this.props.cityValue}
         />
       </div>
     );

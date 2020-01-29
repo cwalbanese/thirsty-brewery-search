@@ -30,14 +30,20 @@ class App extends Component {
         .then(response => response.json())
         .then(response => {
           this.setState({ data: response });
+          this.clearSearch();
         });
     } else {
       fetch(cityurl)
         .then(response => response.json())
         .then(response => {
           this.setState({ data: response });
+          this.clearSearch();
         });
     }
+  };
+
+  clearSearch = () => {
+    this.setState({ nameValue: '', cityValue: '' });
   };
 
   render() {
@@ -54,6 +60,8 @@ class App extends Component {
             <Nav
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
+              nameValue={this.state.nameValue}
+              cityValue={this.state.cityValue}
             />
             <Link to="/">
               <h2 className="searchbar">about</h2>
