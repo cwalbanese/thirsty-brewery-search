@@ -8,7 +8,7 @@
 
 ## About
 
-#### This web based application utilizes an API to search through a database of breweries, cideries, brewpubs, and bottleshops across the United States. There are two ways to narrow your results, by name/keyword or city/town. I chose to use a brewery API as my project because I got married at a brewery and thought it would be a fun project.
+#### This web based application utilizes an API to search through a database of breweries, cideries, brewpubs, and bottleshops across the United States. There are two ways to narrow your results, by name/keyword or city/town. I chose to use a brewery API because I got married at a brewery and thought it would be a fun project.
 
 ## Technology
 
