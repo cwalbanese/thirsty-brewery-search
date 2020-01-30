@@ -6,7 +6,7 @@ class CitySearchForm extends Component {
       <div>
         <div>
           <h2 className="searchbar">city/town</h2>
-          <form className="nav-form" onSubmit={this.props.handleSubmit}>
+          <form className="nav-form">
             <input
               onChange={this.props.handleChange}
               placeholder="search"

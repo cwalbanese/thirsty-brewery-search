@@ -21,9 +21,9 @@ class App extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    const nameurl = `https://api.openbrewerydb.org/breweries?by_name=${this.state.nameValue}`;
+    const nameurl = `https://api.openbrewerydb.org/breweries?per_page=50&by_name=${this.state.nameValue}`;
 
-    const cityurl = `https://api.openbrewerydb.org/breweries?by_city=${this.state.cityValue}`;
+    const cityurl = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${this.state.cityValue}`;
 
     if (evt.target.name === 'name') {
       fetch(nameurl)
