@@ -1,150 +1,151 @@
 * {
-  padding: 0;
-  margin: 0;
-  font-family: sans-serif;
+	padding: 0;
+	margin: 0 auto;
+	font-family: sans-serif;
+	max-width: 1000px;
 }
 
 header a {
-  text-decoration: none;
-  color: white;
+	text-decoration: none;
+	color: white;
 }
 
 nav a {
-  text-decoration: none;
-  color: black;
+	text-decoration: none;
+	color: black;
 }
 
 header {
-  background-color: black;
-  color: white;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 75px;
+	background-color: black;
+	color: white;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 75px;
 }
 
 header h1 {
-  margin-left: 10px;
-  margin-right: 10px;
-  font-size: 48px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 48px;
 }
 
 header h3 {
-  margin-left: 10px;
-  margin-right: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .page {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
 }
 
 nav {
-  padding: 20px;
+	padding: 20px;
 }
 
 .searchbar {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 30px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 30px;
 }
 
 input {
-  border: 2px solid black;
-  width: 160px;
-  height: 25px;
-  font-size: 18px;
+	border: 2px solid black;
+	width: 160px;
+	height: 25px;
+	font-size: 18px;
 }
 
 input::placeholder {
-  font-size: 18px;
+	font-size: 18px;
 }
 
 button {
-  border: 2px solid black;
-  margin-left: 20px;
-  background-color: lightgray;
-  height: 29px;
+	border: 2px solid black;
+	margin-left: 20px;
+	background-color: lightgray;
+	height: 29px;
 }
 
 form {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .searchBy {
-  font-style: italic;
+	font-style: italic;
 }
 
 .smallContainer {
-  border: 1px solid black;
-  margin: 20px;
-  padding: 10px;
-  background-color: lightgray;
+	border: 1px solid black;
+	margin: 20px;
+	padding: 10px;
+	background-color: lightgray;
 }
 
 .address {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 .phone {
-  margin-top: 10px;
-  margin-bottom: 20px;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
 .breweryType {
-  font-style: italic;
-  margin-bottom: 20px;
-  margin-top: 10px;
+	font-style: italic;
+	margin-bottom: 20px;
+	margin-top: 10px;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
 .keg {
-  width: 150px;
-  margin-top: 50px;
+	width: 150px;
+	margin-top: 50px;
 }
 
 .bartender {
-  width: 100%;
+	width: 100%;
 }
 
 .thirsty {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 .website {
-  color: black;
+	color: black;
 }
 
 .about {
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-bottom: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
 @media (max-width: 600px) {
-  .page {
-    display: block;
-  }
-  .container {
-    display: block;
-  }
-  .website {
-    font-size: 12px;
-  }
-  .about {
-    margin-left: 10px;
-    margin-bottom: 10px;
-  }
+	.page {
+		display: block;
+	}
+	.container {
+		display: block;
+	}
+	.website {
+		font-size: 12px;
+	}
+	.about {
+		margin-left: 10px;
+		margin-bottom: 10px;
+	}
 
-  nav,
-  .nav-form {
-    display: block;
-    text-align: center;
-  }
+	nav,
+	.nav-form {
+		display: block;
+		text-align: center;
+	}
 }
