@@ -11,32 +11,34 @@ class App extends Component {
     this.state = {
       nameValue: '',
       cityValue: '',
-      data: []
+      data: [],
     };
   }
 
-  handleChange = evt => {
+  handleChange = (evt) => {
     this.setState({ [evt.target.name]: evt.target.value });
   };
 
-  handleSubmit = evt => {
+  handleSubmit = (evt) => {
     evt.preventDefault();
     const nameurl = `https://api.openbrewerydb.org/breweries?per_page=50&by_name=${this.state.nameValue}`;
-
     const cityurl = `https://api.openbrewerydb.org/breweries?per_page=50&by_city=${this.state.cityValue}`;
+    const page = document.querySelector('.page');
+
+    page.classList.add('page-order');
 
     if (evt.target.name === 'name') {
       fetch(nameurl)
-        .then(response => response.json())
-        .then(response => {
+        .then((response) => response.json())
+        .then((response) => {
           this.setState({ data: response });
           this.clearSearch();
         })
         .then(() => this.props.history.push('/search'));
     } else {
       fetch(cityurl)
-        .then(response => response.json())
-        .then(response => {
+        .then((response) => response.json())
+        .then((response) => {
           this.setState({ data: response });
           this.clearSearch();
         })
@@ -49,11 +51,15 @@ class App extends Component {
   };
 
   render() {
+    const pageOrder = () => {
+      const page = document.querySelector('.page');
+      page.classList.remove('page-order');
+    };
     return (
       <>
         <header>
           <Link to="/">
-            <h1>thirsty</h1>
+            <h1 onClick={pageOrder}>thirsty</h1>
           </Link>
           <h3>local breweries, cideries, brewpubs, and bottleshops</h3>
         </header>
@@ -65,9 +71,6 @@ class App extends Component {
               nameValue={this.state.nameValue}
               cityValue={this.state.cityValue}
             />
-            <Link to="/">
-              <h2 className="searchbar">about</h2>
-            </Link>
             <img className="keg" src="./images/keg.svg" alt="keg"></img>
           </nav>
           <main>

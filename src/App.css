@@ -4,6 +4,10 @@
   font-family: sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 header a {
   text-decoration: none;
   color: white;
@@ -129,8 +133,14 @@ form {
 
 @media (max-width: 600px) {
   .page {
-    display: block;
+    display: flex;
+    flex-direction: column-reverse;
   }
+
+  .page-order {
+    flex-direction: column;
+  }
+
   .container {
     display: block;
   }

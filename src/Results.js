@@ -4,7 +4,7 @@ class Results extends Component {
   render() {
     return (
       <div className="container">
-        {this.props.data.map(result => (
+        {this.props.data.map((result) => (
           <div className="smallContainer" key={result.id}>
             <h1>{result.name}</h1>
             <a
