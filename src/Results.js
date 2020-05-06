@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Results extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container" id="results">
         {this.props.data.map((result) => (
           <div className="smallContainer" key={result.id}>
             <h1>{result.name}</h1>

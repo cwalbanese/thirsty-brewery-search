@@ -34,7 +34,10 @@ class App extends Component {
           this.setState({ data: response });
           this.clearSearch();
         })
-        .then(() => this.props.history.push('/search'));
+        .then(() => this.props.history.push('/search'))
+        .then(() => {
+          document.getElementById('results').scrollIntoView();
+        });
     } else {
       fetch(cityurl)
         .then((response) => response.json())
@@ -42,7 +45,10 @@ class App extends Component {
           this.setState({ data: response });
           this.clearSearch();
         })
-        .then(() => this.props.history.push('/search'));
+        .then(() => this.props.history.push('/search'))
+        .then(() => {
+          document.getElementById('results').scrollIntoView();
+        });
     }
   };
 
