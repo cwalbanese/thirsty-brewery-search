@@ -16,7 +16,13 @@ class Results extends Component {
               <h3>{result.website_url}</h3>
             </a>
             <h2 className="breweryType">type: {result.brewery_type}</h2>
-            <h3 className="phone">phone: {result.phone}</h3>
+            {result.phone ? (
+              <h3 className="phone">
+                phone: <a href={'tel:' + result.phone}>{result.phone}</a>
+              </h3>
+            ) : (
+              ''
+            )}
             <h3>address:</h3>
             <div className="address">
               <h3>{result.street}</h3>
